@@ -1,0 +1,19 @@
+spring:
+  config:
+    import: # Import configurations from shared folder
+      - optional:classpath:config/shared/routes-config.yaml
+      - optional:classpath:config/shared/eureka-config.yaml
+      - optional:classpath:config/shared/springdoc-config.yaml
+      - optional:classpath:config/shared/keycloak-client-config.yaml
+      - optional:classpath:config/shared/spring-admin-client-config.yaml
+  application:
+    name: api-gateway  # Name of the Spring application
+
+server:
+  port: 80  # Server port
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  # Expose all management endpoints

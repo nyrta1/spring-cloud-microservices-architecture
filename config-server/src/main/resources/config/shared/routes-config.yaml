@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          # MINIO-FILE-SERVER route configuration
+          - id: minio-file-service
+            uri: lb://minio-file-service  # Load balanced URI for the MinIO file server
+            predicates:
+              - Path=/minio/**  # Path predicate for routing requests
+            filters:
+              - TokenRelay= # Relay the token for authentication
+
+          # SPRING-ADMIN-SERVER route configuration
+          - id: spring-admin-server
+            uri: lb://spring-admin-server  # Load balanced URI for the Spring Admin server
+            predicates:
+              - Path=/admin/**  # Path predicate for routing requests
+            filters:
+              - TokenRelay= # Relay the token for authentication

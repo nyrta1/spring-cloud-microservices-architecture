@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: minio-file-service  # Name of the Spring application
+  config:
+    import: # Import configurations from shared folder
+      - optional:classpath:config/shared/redis-config.yaml
+      - optional:classpath:config/shared/eureka-config.yaml
+      - optional:classpath:config/shared/minio-database-config.yaml
+      - optional:classpath:config/shared/minio-instance-config.yaml
+      - optional:classpath:config/shared/spring-admin-client-config.yaml
+      - optional:classpath:config/shared/keycloak-resourceserver-config.yaml
+
+server:
+  port: 5002  # Server port
+  servlet:
+    context-path: /minio

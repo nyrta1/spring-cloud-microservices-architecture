@@ -1,0 +1,12 @@
+spring:
+  config:
+    import: # Import environment variables from .env._____ files
+      - optional:file:minio.env[.properties]
+      - optional:file:server.hosts.env[.properties]
+      - optional:file:server.ports.env[.properties]
+
+minio:
+  url: http://${MINIO_INSTANCE_HOST}:${MINIO_INSTANCE_PORT}  # MinIO instance URL
+  access:
+    key: ${MINIO_ROOT_ACCESS_KEY}  # MinIO root access key
+    secret: ${MINIO_ROOT_SECRET_KEY}  # MinIO root secret key

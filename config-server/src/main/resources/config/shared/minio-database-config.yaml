@@ -1,0 +1,13 @@
+spring:
+  config:
+    import: # Import environment variables from .env._____ files
+      - optional:file:minio.postgres.env[.properties]
+  datasource:
+    driver-class-name: org.postgresql.Driver  # PostgreSQL driver class name
+    url: jdbc:postgresql://${MINIO_POSTGRES_HOST}:${MINIO_POSTGRES_PORT}/${MINIO_POSTGRES_DB}  # Database URL
+    username: ${MINIO_POSTGRES_USER}  # Database username
+    password: ${MINIO_POSTGRES_PASSWORD}  # Database password
+  jpa:
+    hibernate:
+      ddl-auto: update  # Hibernate configuration for database schema management
+    show-sql: true  # Show SQL queries in the logs

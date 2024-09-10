@@ -1,0 +1,9 @@
+spring:
+  config:
+    import: # Import environment variables from .env._____ files
+      - optional:file:keycloak.env[.properties]
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${KEYCLOAK_URL}/realms/${KEYCLOAK_REALM}/protocol/openid-connect/certs  # JWK set URI for Keycloak to validate JWT tokens

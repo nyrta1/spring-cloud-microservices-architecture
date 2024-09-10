@@ -1,0 +1,9 @@
+spring:
+  config:
+    import: # Import environment variables from .env._____ files
+      - optional:file:server.hosts.env[.properties]
+      - optional:file:server.ports.env[.properties]
+  boot:
+    admin:
+      client:
+        url: http://${SPRING_ADMIN_HOST}:${SPRING_ADMIN_PORT}  # URL for Spring Boot Admin client

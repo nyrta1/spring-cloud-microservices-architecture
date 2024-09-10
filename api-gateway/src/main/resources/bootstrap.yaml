@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    config:
+      uri:  http://localhost:9296
+
+#        - http://localhost:9296
+#        - http://localhost:9296/eureka-client.yaml
+#        - http://localhost:9296/actuator-management.yaml
+#        - http://localhost:9296/spring-admin-client.yaml
+#        - http://localhost:9296/keycloak-oauth2-client.yaml
+#        - http://localhost:9296/keycloak-oauth2-resourceserver.yaml

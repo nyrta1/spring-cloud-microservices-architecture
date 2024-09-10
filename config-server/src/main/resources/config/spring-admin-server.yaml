@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: spring-admin-server  # Name of the Spring application
+  config:
+    import: # Import configurations from shared folder
+      - optional:classpath:config/shared/keycloak-resourceserver-config.yaml
+
+server:
+  port: 5050  # Server port
+  servlet:
+    context-path: /admin

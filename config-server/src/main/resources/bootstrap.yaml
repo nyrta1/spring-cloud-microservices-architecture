@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      uri:
+        - http://localhost:9296/eureka-client.yaml
+        - http://localhost:9296/spring-admin-client.yaml

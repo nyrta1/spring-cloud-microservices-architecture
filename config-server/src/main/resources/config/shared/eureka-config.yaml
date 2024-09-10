@@ -1,0 +1,14 @@
+spring:
+  config:
+    import:
+      - optional:file:server.hosts.env[.properties]
+      - optional:file:server.ports.env[.properties]
+
+eureka:
+  instance:
+    hostname: ${EUREKA_HOST}  # Hostname for the Eureka instance
+  client:
+    fetchRegistry: false  # Disable fetching of registry information
+    registerWithEureka: false  # Disable registration with Eureka
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOST}:${EUREKA_PORT}/eureka/  # Eureka server URL

@@ -1,0 +1,8 @@
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    urls:
+      - url: /minio/v3/api-docs
+        name: Minio File Service (required role `ROLE_MINIO_SWAGGER_ACCESS`)

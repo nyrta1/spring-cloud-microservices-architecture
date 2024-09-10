@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: eureka-server  # Name of the Spring application
+  config:
+    import: # Import configurations from shared folder
+      - optional:classpath:config/shared/eureka-config.yaml
+      - optional:classpath:config/shared/spring-admin-client-config.yaml
+
+server:
+  port: 8761  # Server port
+

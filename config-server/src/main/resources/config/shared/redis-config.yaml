@@ -1,0 +1,14 @@
+spring:
+  config:
+    import: # Import environment variables from .env._____ files
+      - optional:file:server.hosts.env[.properties]
+      - optional:file:server.ports.env[.properties]
+#  cache:
+#    type: redis
+#  data:
+#    redis:
+#      cluster:
+#        nodes:
+#          - redis-cluster-0.redis.default.svc.cluster.local:6379
+#          - redis-cluster-1.redis.default.svc.cluster.local:6379
+#          - redis-cluster-2.redis.default.svc.cluster.local:6379
